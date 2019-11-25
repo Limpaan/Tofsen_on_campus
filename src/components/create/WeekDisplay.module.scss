@@ -1,0 +1,66 @@
+@import "constants";
+@font-face {
+  font-family: 'Franklin Gothic Book';
+  src: url('/FranklinGothic-Book.woff2') format('woff2'),
+  url('/FranklinGothic-Book.woff') format('woff');
+}
+
+.wrapper {
+  background-color: black;
+  width: $scale*100vw;
+  height: $scale*100vw;
+}
+
+.layout {
+  padding-left: $scale*4vw;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.title {
+  color: white;
+  font-size: $scale*10.5vw;
+  font-weight: bold;
+  font-family: "Franklin Gothic Book", sans-serif;
+}
+
+.LV {
+  color: $tofsenblue;
+  font-family: "Franklin Gothic Book", sans-serif;
+  font-size: $scale*16vw;
+  font-weight: bold;
+  margin-top: $scale*-1.5vw;
+  margin-bottom: $scale*6vw;
+  align-self: center;
+  margin-left: -$scale*44vw;
+}
+
+.LVsmall {
+  font-size: $scale*8vw;
+}
+
+.topspacer {
+  height: $scale*3vw;
+}
+
+.bottomright {
+  display: flex;
+  flex-direction: row;
+  font-family: "Franklin Gothic Book", sans-serif;
+  font-size: $scale*4vw;
+  font-weight: bold;
+  align-self: flex-end;
+  margin-top: auto;
+  margin-right: $scale*0.7vw;
+  margin-bottom: $scale*0.7vw;
+}
+
+.madeby {
+  color: white;
+  margin-right: $scale*1.5vw;
+}
+
+.nyatofsen {
+  color: $tofsenblue;
+}

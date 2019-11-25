@@ -1,0 +1,26 @@
+.wrapper {
+  color: white;
+  font-size: 2vw;
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: row;
+  margin-top: 0.25vw;
+}
+
+.dayspacer {
+  width: 12.75vw;
+  display: flex;
+  flex-direction: row;
+}
+
+.day {
+  margin-right: 0.75vw;
+  color: #F86600;
+}
+
+.divider {
+  margin-left: 0.5vw;
+  width: 1.5vw;
+}
+
+/*# sourceMappingURL=EventItem.module.css.map */

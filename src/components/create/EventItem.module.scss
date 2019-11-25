@@ -1,0 +1,26 @@
+@import "constants";
+
+.wrapper {
+  color: white;
+  font-size: $scale*4vw;
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: row;
+  margin-top: $scale*0.5vw;
+}
+
+.dayspacer {
+  width: $scale*25.5vw;
+  display: flex;
+  flex-direction: row;
+}
+
+.day {
+  margin-right: $scale*1.5vw;
+  color: $tofsenorange;
+}
+
+.divider {
+  margin-left: $scale*1vw;
+  width: $scale*3vw;
+}

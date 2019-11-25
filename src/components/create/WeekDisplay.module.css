@@ -1,0 +1,65 @@
+@font-face {
+  font-family: "Franklin Gothic Book";
+  src: url("/FranklinGothic-Book.woff2") format("woff2"), url("/FranklinGothic-Book.woff") format("woff");
+}
+.wrapper {
+  background-color: black;
+  width: 50vw;
+  height: 50vw;
+}
+
+.layout {
+  padding-left: 2vw;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.title {
+  color: white;
+  font-size: 5.25vw;
+  font-weight: bold;
+  font-family: "Franklin Gothic Book", sans-serif;
+}
+
+.LV {
+  color: #00acff;
+  font-family: "Franklin Gothic Book", sans-serif;
+  font-size: 8vw;
+  font-weight: bold;
+  margin-top: -0.75vw;
+  margin-bottom: 3vw;
+  align-self: center;
+  margin-left: -22vw;
+}
+
+.LVsmall {
+  font-size: 4vw;
+}
+
+.topspacer {
+  height: 1.5vw;
+}
+
+.bottomright {
+  display: flex;
+  flex-direction: row;
+  font-family: "Franklin Gothic Book", sans-serif;
+  font-size: 2vw;
+  font-weight: bold;
+  align-self: flex-end;
+  margin-top: auto;
+  margin-right: 0.35vw;
+  margin-bottom: 0.35vw;
+}
+
+.madeby {
+  color: white;
+  margin-right: 0.75vw;
+}
+
+.nyatofsen {
+  color: #00acff;
+}
+
+/*# sourceMappingURL=WeekDisplay.module.css.map */

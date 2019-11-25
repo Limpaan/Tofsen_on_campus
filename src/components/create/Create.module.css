@@ -1,0 +1,11 @@
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.bottom-side {
+  display: flex;
+  flex-direction: row;
+}
+
+/*# sourceMappingURL=Create.module.css.map */

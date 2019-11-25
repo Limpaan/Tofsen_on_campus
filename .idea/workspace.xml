@@ -1,8 +1,150 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="c19e41ce-e7e2-4acb-b02e-700789fe9daa" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Layout.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/create/Create.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/create/Create.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/create/EventForm.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/create/EventItem.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/create/EventItem.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/create/EventList.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/create/EventList.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/create/WeekDisplay.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/create/WeekDisplay.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/create/_constants.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/home/Home.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/render/Render.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="TypeScript JSX File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
   <component name="ProjectId" id="1R0lai5tB37SdlolQhiuqeQg5hK" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../TheConsidition2019/TheConsidition.Globhe.Web/ClientApp" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.stylelint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.stylelint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.stylelint" value="" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path" value="node" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="watcher.settings" />
+    <property name="ts.external.directory.path" value="E:\Programming\tofsen_on_campus\node_modules\typescript\lib" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="npm.npm start">
+    <configuration name="Debug Application" type="JavascriptDebugType" uri="http://localhost:3000">
+      <method v="2" />
+    </configuration>
+    <configuration name="npm start" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c19e41ce-e7e2-4acb-b02e-700789fe9daa" name="Default Changelist" comment="" />
+      <created>1568811959165</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1568811959165</updated>
+      <workItem from="1568811960506" duration="9771000" />
+      <workItem from="1568881253028" duration="4477000" />
+      <workItem from="1568968920170" duration="3179000" />
+      <workItem from="1569159505127" duration="5525000" />
+      <workItem from="1569429939464" duration="90000" />
+      <workItem from="1569433279698" duration="1222000" />
+      <workItem from="1569434559812" duration="643000" />
+      <workItem from="1569770326230" duration="642000" />
+      <workItem from="1570373416377" duration="866000" />
+      <workItem from="1570563202286" duration="32000" />
+      <workItem from="1571040672391" duration="603000" />
+      <workItem from="1571602456077" duration="1654000" />
+      <workItem from="1572202104141" duration="608000" />
+      <workItem from="1572816082620" duration="378000" />
+      <workItem from="1573324580566" duration="194000" />
+      <workItem from="1574014815060" duration="628000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand>
+      <path>
+        <item name="tofsen_on_campus" type="b2602c69:ProjectViewProjectNode" />
+        <item name="tofsen_on_campus" type="462c0819:PsiDirectoryNode" />
+      </path>
+    </expand>
+    <select />
   </component>
 </project>
