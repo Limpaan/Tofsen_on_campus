@@ -4,7 +4,6 @@ import { Home } from './components/home/Home';
 import { Switch } from 'react-router';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import './App.css';
-import {Render} from "./components/render/Render";
 import {Create} from "./components/create/Create";
 
 export default class App extends Component {
@@ -17,7 +16,6 @@ export default class App extends Component {
                 <Switch>
                     <Route exact path='/' component={Home} />
                     <Route path='/create' component={Create} />
-                    <Route path='/render' component={Render} />
                 </Switch>
             </Layout>
         </Router>

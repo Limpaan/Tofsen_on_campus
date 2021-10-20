@@ -1,15 +1,24 @@
+@import "src/components/common/constants";
+
 .container {
   display: flex;
   flex-direction: column;
 }
 
-.left-side {
-}
-
-.right-side {
-}
-
-.bottom-side {
+.topRow {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+}
+
+.button {
+  font-size: 18px;
+  font-weight: bold;
+  margin-right: $scale/2*100vw;
+}
+
+.formLabel {
+  display: inline-block;
+  margin-right: 5px;
+  width: 90px;
 }

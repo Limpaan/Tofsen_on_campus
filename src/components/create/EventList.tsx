@@ -12,12 +12,11 @@ export class EventList extends Component<IProps, {}> {
     static displayName = EventList.name;
 
     render() {
-
-        let list = this.props.events.map(data => {
+        let list = this.props.events.map((data, index) => {
             return(
-                <div className={styles["item"]}>
+                <div className={styles["item"]} key={index}>
                     <div className={styles["info"]}>{data.date} {data.title}</div>
-                    <button onClick={(e : React.MouseEvent<HTMLElement>) => {this.props.removeEvent(data)}}>Ta bort</button>
+                    <button className={styles.removeButton} onClick={(e : React.MouseEvent<HTMLElement>) => {this.props.removeEvent(data)}}>Ta bort</button>
                 </div>
             )
         });

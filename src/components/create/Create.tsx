@@ -1,15 +1,19 @@
 import React, {Component} from 'react';
 import {EventData} from './EventItem';
 import styles from './Create.module.scss';
-import {Form, FormGroup, Input, Label} from "reactstrap";
+import {Button, Form, FormGroup, Input, Label} from "reactstrap";
 import {EventForm} from "./EventForm";
 import {WeekDisplay} from "./WeekDisplay";
 import html2canvas from 'html2canvas';
 import {EventList} from "./EventList";
+import {saveAs} from "file-saver";
+import cssConstants from "../common/_constants.scss";
+import {GetContainerSize} from "../common/GetContainerSize";
+import {SlideModule} from "./SlideModule";
 
 interface IState {
     studyWeek : string;
-    events : Array<EventData>;
+    numberOfSlides: number;
 }
 
 export class Create extends Component<{}, IState> {
@@ -20,12 +24,11 @@ export class Create extends Component<{}, IState> {
 
         this.state = {
             studyWeek : "LV1",
-            events : []
+            numberOfSlides: 1,
         }
 
         this.handleSelectChange = this.handleSelectChange.bind(this);
-        this.addEvent = this.addEvent.bind(this);
-        this.removeEvent = this.removeEvent.bind(this);
+        this.handleNumberChange = this.handleNumberChange.bind(this);
         this.makeImage = this.makeImage.bind(this);
     }
 
@@ -37,30 +40,28 @@ export class Create extends Component<{}, IState> {
         })
     }
 
-    addEvent(data : EventData) {
-        this.setState({
-            events : [...this.state.events, data]
-        });
-    }
+    handleNumberChange(event: React.FormEvent<HTMLInputElement>) {
+        event.preventDefault();
+        const targetNumber = event.currentTarget.valueAsNumber;
 
-    removeEvent(event: EventData) {
-        let events = [...this.state.events];
-        const index = events.indexOf(event);
-        if(index !== -1) {
-            events.splice(index, 1);
+        if (targetNumber > 0 && targetNumber < 11) {
             this.setState({
-                events : events
+                numberOfSlides: targetNumber,
             })
         }
     }
 
-    async makeImage() {
-        let disp = document.getElementById("display")
-        if(disp) {
-            window.scrollTo(0, 0);
-            await html2canvas(disp, {width: 1024, height: 1024, windowWidth: 2048, windowHeight: 2048}).then(function (canvas) {
-                document.body.appendChild(canvas);
-            });
+    async makeImage(studyWeek: string) {
+        for (let i = 0; i<this.state.numberOfSlides; i++) {
+            let disp = document.getElementById("display" + i)
+            if(disp) {
+                window.scrollTo(0, 0);
+                await html2canvas(disp, {width: 1024, height: 1024, windowWidth: 1024/cssConstants.scale, windowHeight: 1024/cssConstants.scale}).then(function (canvas) {
+                    let image = document.body.appendChild(canvas);
+                    image.hidden = true;
+                    saveAs(image.toDataURL(), new Date().toISOString().split("T")[0] + "_" + i + "_" + studyWeek + ".png")
+                });
+            }
         }
     }
 
@@ -68,35 +69,38 @@ export class Create extends Component<{}, IState> {
         return (
             <div className={styles["container"]}>
                 <div className={styles["top-side"]}>
-                    <div>Välj vecka här</div>
-                    <Form>
-                        <FormGroup>
-                            <Label for="studyweek">Läsvecka</Label>
-                            <Input type="select" name="studyweek" id="studyweek" onChange={this.handleSelectChange} value={this.state.studyWeek}>
-                                <option>LV1</option>
-                                <option>LV2</option>
-                                <option>LV3</option>
-                                <option>LV4</option>
-                                <option>LV5</option>
-                                <option>LV6</option>
-                                <option>LV7</option>
-                                <option>LV8</option>
-                                <option>LV9</option>
-                                <option>TENTAVECKA</option>
-                            </Input>
-                        </FormGroup>
-                    </Form>
-                    <button onClick={this.makeImage}>Skapa bild</button>
+                    <div className={styles.topRow}>
+                        <div className={styles.settings}>
+                            <Form>
+                                <FormGroup>
+                                    <Label className={styles.formLabel} for="studyweek">Läsvecka</Label>
+                                    <Input className={styles.formInput} type="select" name="studyweek" id="studyweek" onChange={this.handleSelectChange} value={this.state.studyWeek}>
+                                        <option>LV1</option>
+                                        <option>LV2</option>
+                                        <option>LV3</option>
+                                        <option>LV4</option>
+                                        <option>LV5</option>
+                                        <option>LV6</option>
+                                        <option>LV7</option>
+                                        <option>LV8</option>
+                                        <option>LV9</option>
+                                        <option>TENTAVECKA</option>
+                                    </Input>
+                                </FormGroup>
+                            </Form>
+                            <Form>
+                                <FormGroup>
+                                    <Label className={styles.formLabel} for="numberofslides">Antal bilder</Label>
+                                    <Input className={styles.formInput} type="number" name="numberofslides" id="numberofslides" onChange={this.handleNumberChange} value={this.state.numberOfSlides} />
+                                </FormGroup>
+                            </Form>
+                        </div>
+                        <button className={styles.button} onClick={() => this.makeImage(this.state.studyWeek)}>Skapa bild</button>
+                    </div>
                     <hr />
                 </div>
                 <div className={styles["bottom-side"]}>
-                    <div className={styles["left-side"]}>
-                        <EventForm pushNewEvent={this.addEvent}/>
-                        <EventList removeEvent={this.removeEvent} events={this.state.events}/>
-                    </div>
-                    <div className={styles["right-side"]}>
-                        <WeekDisplay id="display" studyWeek={this.state.studyWeek} events={this.state.events} />
-                    </div>
+                    {Array.apply(null, Array(this.state.numberOfSlides)).map((i, index) => <SlideModule studyWeek={this.state.studyWeek} displayTitle={index === 0} slideNumber={index}/>)}
                 </div>
             </div>
         );

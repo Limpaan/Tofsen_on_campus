@@ -1,9 +1,5 @@
-@import "constants";
-@font-face {
-  font-family: 'Franklin Gothic Book';
-  src: url('/FranklinGothic-Book.woff2') format('woff2'),
-  url('/FranklinGothic-Book.woff') format('woff');
-}
+@import "src/components/common/constants";
+@import "src/components/common/fonts";
 
 .wrapper {
   background-color: black;

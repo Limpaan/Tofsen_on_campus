@@ -5,6 +5,7 @@ import styles from './WeekDisplay.module.scss';
 
 interface IProps {
     studyWeek : string;
+    displayTitle : boolean;
     events : Array<EventData>;
     id : string;
 }
@@ -13,14 +14,6 @@ export class WeekDisplay extends Component<IProps, {}> {
     static displayName = WeekDisplay.name;
 
     render() {
-        this.props.events.sort(((a, b) => {
-            if(a.date < b.date)
-                return -1;
-            if(a.date > b.date)
-                return 1;
-            return 0;
-        }));
-
         let small = false;
         if(this.props.studyWeek === "TENTAVECKA") {
             small = true;
@@ -29,23 +22,23 @@ export class WeekDisplay extends Component<IProps, {}> {
         let tmpDate = "";
         let items : JSX.Element[] = [];
 
-        this.props.events.forEach(event => {
+        this.props.events.forEach((event, index) => {
             if(tmpDate !== event.date) {
                 tmpDate = event.date;
-                if(items.length >= 1) {
-                    items.push(<div className={styles["topspacer"]} />);
+                if(items.length >= 1 || !this.props.displayTitle) {
+                    items.push(<div className={styles["topspacer"]} key={index} />);
                 }
-                items.push(<EventItem data={event} displayDate={true} />);
+                items.push(<EventItem data={event} displayDate={true} key={index} />);
             } else {
-                items.push(<EventItem data={event} displayDate={false} />);
+                items.push(<EventItem data={event} displayDate={false} key={index} />);
             }
         });
 
         return (
             <div id={this.props.id} className={styles["wrapper"]}>
                 <div className={styles["layout"]}>
-                    <div className={styles["title"]}>På Campus i Veckan</div>
-                    <div className={styles["LV"] + (small ? " " + styles["LVsmall"] : "")}>{this.props.studyWeek}</div>
+                    {this.props.displayTitle && <div className={styles["title"]}>På Campus i Veckan</div>}
+                    {this.props.displayTitle && <div className={styles["LV"] + (small ? " " + styles["LVsmall"] : "")}>{this.props.studyWeek}</div>}
                     {items}
                     <div className={styles["bottomright"]}>
                         <div className={styles["madeby"]}>Presenteras av</div>
