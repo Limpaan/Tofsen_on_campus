@@ -1,14 +1,9 @@
 import React, {Component} from 'react';
-import {EventData} from './EventItem';
 import styles from './Create.module.scss';
 import {Button, Form, FormGroup, Input, Label} from "reactstrap";
-import {EventForm} from "./EventForm";
-import {WeekDisplay} from "./WeekDisplay";
 import html2canvas from 'html2canvas';
-import {EventList} from "./EventList";
 import {saveAs} from "file-saver";
 import cssConstants from "../common/_constants.scss";
-import {GetContainerSize} from "../common/GetContainerSize";
 import {SlideModule} from "./SlideModule";
 
 interface IState {
